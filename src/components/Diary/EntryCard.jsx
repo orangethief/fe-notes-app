@@ -24,8 +24,11 @@ const EntryCard = ({ entry }) => {
 
       if (!response.ok)
         {
-          
-          throw new Error('Failed to generate AI image');}
+          console.log(response);
+         const whatever = await response.json();
+         console.log(whatever);
+
+          throw new Error('try');}
 
       else {
       const dataResult = await response.json();
@@ -36,7 +39,8 @@ const EntryCard = ({ entry }) => {
 
 
     } catch (error) {
-      console.error(error);
+      console.error(error.message);
+
       alert('Failed to generate AI image');
     }
   }
