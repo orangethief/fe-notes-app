@@ -35,7 +35,7 @@ const CreateNote = ({ setNotes }) => {
       <div className='fixed bottom-4 right-16'>
         <button
           onClick={() => modalRef.current.showModal()}
-          className='bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded-full shadow-lg w-10 h-10'
+          className='bg-green-700 hover:bg-green-800 text-white font-bold rounded-full shadow-lg w-10 h-10 pb-1 flex items-center justify-center'
         >
           +
         </button>
@@ -78,7 +78,7 @@ const CreateNote = ({ setNotes }) => {
             </label>
             <div className='label w-full'>
               <textarea
-                cols={80}
+                cols={50}
                 rows={10}
                 className='textarea textarea-bordered h-24'
                 placeholder='Content'
@@ -88,7 +88,7 @@ const CreateNote = ({ setNotes }) => {
               ></textarea>
             </div>
 
-            <button className='btn btn-error text-white'>Create</button>
+            <button className='btn bg-indigo-600 hover:bg-indigo-700 text-white' onClick={handleSubmit}>Create</button>
           </form>
         </div>
       </dialog>

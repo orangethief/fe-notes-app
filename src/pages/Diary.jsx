@@ -4,13 +4,13 @@ import { CreateEntry, MoodAIAnalysis, EntriesList } from '@/components/Diary';
 import { toast } from 'react-toastify';
 
 const Diary = () => {
-  const [entries, seEntries] = useState([]);
+  const [entries, setEntries] = useState([]);
 
   useEffect(() => {
     (async () => {
       try {
         const { data } = await axios.get(`${import.meta.env.VITE_NOTES_API}/entries`);
-        seEntries(data);
+        setEntries(data);
       } catch (error) {
         toast.error(error.message);
       }
@@ -20,7 +20,7 @@ const Diary = () => {
   return (
     <>
       <EntriesList entries={entries} />
-      <CreateEntry setEntries={seEntries} />
+      <CreateEntry setEntries={setEntries} />
       <MoodAIAnalysis entries={entries} />
     </>
   );
